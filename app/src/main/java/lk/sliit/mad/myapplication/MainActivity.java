@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     ImageView imageView1,imageView2,drawingImageView;
     TextView textView1,textView2;
-    LinearLayout l1,l2;
+    LinearLayout l1,l2,l3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +35,20 @@ public class MainActivity extends AppCompatActivity {
         textView2=findViewById(R.id.textView4);
         l1=findViewById(R.id.auditl1);
         l2=findViewById(R.id.post1);
+        l3=findViewById(R.id.post2);
         int array1[]=new int[2];
         int array[]=new int[2];
+        int array2[]=new int[2];
         l1.getLocationOnScreen(array);
         l2.getLocationOnScreen(array1);
+        l3.getLocationOnScreen(array2);
 
         float x=array[0];
         float y=array[1];
         float x1=array1[0];
         float y1=array1[1];
+        float x2=array2[0];
+        float y2=array2[1];
 
 
 
@@ -71,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
 
        //p.moveTo(x,y);
       // p.lineTo(x1,y1);
-        canvas.drawLine(x+20,y+30,x1+20,y1+30,paint);
+        canvas.drawLine(x+25,y+35,x1+25,y1+35,paint);
+        canvas.drawLine(x1+25,y1+35,x2+25,y2+35,paint);
       // canvas.drawPath(p,paint);
 
         textView1.setText("Start X "+x+"Start Y "+y+" "+dp);
